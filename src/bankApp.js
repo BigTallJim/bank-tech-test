@@ -1,14 +1,10 @@
-function ReviewPractice(){
+function BankApp(){
   
 }
 
-ReviewPractice.prototype.countRedMarks = function(marks){
-  marksArray = marks.split(",");
-  redCount = 0;
-  for (i=0; i<marksArray.length;i++){
-    if (marksArray[i] === 'Red'){
-      redCount++;
-    }
-  }
-  return redCount;
+BankApp.prototype.balance = function(){
+  return 1000;
+}
+
+BankApp.prototype.deposit = function(){
 }
