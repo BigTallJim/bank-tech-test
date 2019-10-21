@@ -40,4 +40,24 @@ describe('Bank Tests', function(){
     expect(bankApp.withdraw(100)).toEqual(100);
     expect(bankApp.balance()).toEqual(900);
   });
+
+  it("Calculates balance from transactions array, deposit", function(){
+    bankApp.deposit(100);
+    bankApp.deposit(50);
+    bankApp.deposit(1);
+    expect(bankApp.sumTransactionArray()).toEqual(151);
+  });
+
+  it("Calculates balance from transactions array, deposit and withdraw", function(){
+    bankApp.deposit(100);
+    bankApp.withdraw(10);
+    expect(bankApp.sumTransactionArray()).toEqual(90);
+  });
+  // it("Calculates lots of deposits and withdrawals", function(){
+  //   bankApp.deposit(100);
+  //   bankApp.withdraw(50);
+  //   bankApp.deposit(1);
+  //   bankApp.withdraw(22);
+  //   expect(bankApp.sumTransactionArray()).toEqual(29);
+  // });
 });

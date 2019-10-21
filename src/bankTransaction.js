@@ -1,15 +1,26 @@
 function BankTransaction(amount, date){
-  this.amount=amount;
+  this.amount=0;
   this.withdrawal = false;
   this.deposit = false;
-  (amount>0) ? this.deposit = true: this.withdrawal = true;
   this.date = date;
+
+  if (amount >= 0){
+    this.deposit = true;
+    this.amount = amount;
+  }else{
+    this.withdrawal = true;
+    this.amount = -amount;
+  }
 }
 
 BankTransaction.prototype.getAmount = function(){
-  return 100;
+  return this.amount;
 }
 
 BankTransaction.prototype.isDeposit = function(){
   return this.deposit;
+}
+
+BankTransaction.prototype.isWithdrawal = function(){
+  return this.withdrawal;
 }
