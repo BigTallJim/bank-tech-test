@@ -17,6 +17,10 @@ So I can see a balance of 1000 in my account
 As a user 
 I want to deposit various amounts
 So I can see my balance reflect these deposits
+
+As a user 
+I want to withdraw from my account
+So I can spend my hard earned money
 ```
 ### Acceptance criteria
 

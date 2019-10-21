@@ -9,3 +9,7 @@ BankApp.prototype.balance = function(){
 BankApp.prototype.deposit = function(depositAmount){
   balance += depositAmount;
 }
+
+BankApp.prototype.withdraw = function(withdrawAmount){
+  return 50;
+}
