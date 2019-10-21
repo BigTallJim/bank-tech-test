@@ -26,7 +26,18 @@ describe('Bank Tests', function(){
 
   it("Withdraw 50 from my bank account", function(){
     bankApp.deposit(1000);
-    bankApp.withdraw(50);
     expect(bankApp.withdraw(50)).toEqual(50);
+  });
+
+  it("Withdraw 100, expect balance to equal 900", function(){
+    bankApp.deposit(1000);
+    bankApp.withdraw(100);
+    expect(bankApp.balance()).toEqual(900);
+  });
+
+  it("Withdraw 100, balance equal 900, and 100 returned", function(){
+    bankApp.deposit(1000);
+    expect(bankApp.withdraw(100)).toEqual(100);
+    expect(bankApp.balance()).toEqual(900);
   });
 });

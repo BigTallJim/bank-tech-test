@@ -11,5 +11,6 @@ BankApp.prototype.deposit = function(depositAmount){
 }
 
 BankApp.prototype.withdraw = function(withdrawAmount){
-  return 50;
+  balance -= withdrawAmount;
+  return withdrawAmount;
 }
