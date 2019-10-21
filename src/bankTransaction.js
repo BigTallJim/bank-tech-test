@@ -17,6 +17,10 @@ BankTransaction.prototype.getAmount = function(){
   return this.amount;
 }
 
+BankTransaction.prototype.getDate = function(){
+  return this.date;
+}
+
 BankTransaction.prototype.isDeposit = function(){
   return this.deposit;
 }

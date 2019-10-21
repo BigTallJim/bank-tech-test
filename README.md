@@ -21,6 +21,14 @@ So I can see my balance reflect these deposits
 As a user 
 I want to withdraw from my account
 So I can spend my hard earned money
+
+As a user 
+I want to see my balance
+So I can plan my big night out
+
+As a user 
+I want to print my statement
+So I can use it to cry at the amount I've spent
 ```
 ### Acceptance criteria
 

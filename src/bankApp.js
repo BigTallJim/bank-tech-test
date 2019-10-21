@@ -7,13 +7,11 @@ BankApp.prototype.balance = function(){
 }
 
 BankApp.prototype.deposit = function(depositAmount, date){
-  transaction = new BankTransaction(depositAmount, date)
-  transactions.push(transaction)
+  transactions.push(new BankTransaction(depositAmount, date))
 }
 
 BankApp.prototype.withdraw = function(withdrawAmount, date){
-  transaction = new BankTransaction(-withdrawAmount, date)
-  transactions.push(transaction)
+  transactions.push(new BankTransaction(-withdrawAmount, date))
   return withdrawAmount;
 }
 
@@ -24,4 +22,8 @@ BankApp.prototype.sumTransactionArray = function(){
     if (trans.isWithdrawal()) total -= trans.getAmount();
   });
   return total;
+}
+
+BankApp.prototype.getTransactions = function(){
+  return transactions;
 }
