@@ -1,5 +1,6 @@
 function BankFormatter(bankApp){
   this.bankApp = bankApp;
+  this.balance = 0;
 }
 
 BankFormatter.prototype.orderByDate = function(){
@@ -22,16 +23,18 @@ BankFormatter.prototype.print = function(){
 }
 
 BankFormatter.prototype.printFormatter = function(){
-  
   returnString =  "Date      |Credit    |Debit     |Balance   |"
   returnString += "\n"
   returnString +=  "----------|----------|----------|----------|"
+  runningTotal = 0;
   bankApp.getTransactions().forEach(function(trans) {
-    returnString += "\n"
+    if (trans.isDeposit()) runningTotal += trans.getAmount();
+    if (trans.isWithdrawal()) runningTotal -= trans.getAmount();
+    returnString += "\n";
     returnString += trans.getDate().padEnd(10,' ') + "|";
     returnString += (trans.isDeposit()) ? trans.getAmount().toString().padEnd(10,' ')+"|":"          |";
     returnString += (trans.isWithdrawal()) ? trans.getAmount().toString().padEnd(10,' ')+"|":"          |";
-    returnString += "Bal tbc".padEnd(10,' ')+"|"
+    returnString += runningTotal.toString().padEnd(10,' ')+"|";
   });
   
   return returnString;
