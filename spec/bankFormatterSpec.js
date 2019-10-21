@@ -28,4 +28,11 @@ describe('Bank Printing Tests', function(){
     bankFormatter = new BankFormatter()
     expect(bankFormatter.print()).toEqual("Date     |Credit    |Debit     |Balance   ");
   });
+
+  it("Checks single row printed out with headings", function(){
+    bankApp = new BankApp();
+    bankApp.deposit(123, "01.01.2019");
+    bankFormatter = new BankFormatter(bankApp)
+    expect(bankFormatter.printFormatter()).toEqual("Date      |Credit    |Debit     |Balance   |\n01.01.2019|123       |          |123       |");
+  });
 });
