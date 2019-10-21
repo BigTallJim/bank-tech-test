@@ -24,13 +24,14 @@ BankFormatter.prototype.print = function(){
 BankFormatter.prototype.printFormatter = function(){
   
   returnString =  "Date      |Credit    |Debit     |Balance   |"
+  returnString += "\n"
+  returnString +=  "----------|----------|----------|----------|"
   bankApp.getTransactions().forEach(function(trans) {
     returnString += "\n"
     returnString += trans.getDate().padEnd(10,' ') + "|";
     returnString += (trans.isDeposit()) ? trans.getAmount().toString().padEnd(10,' ')+"|":"          |";
     returnString += (trans.isWithdrawal()) ? trans.getAmount().toString().padEnd(10,' ')+"|":"          |";
-    
-    returnString += "Bal tbc".padEnd(10,' ')
+    returnString += "Bal tbc".padEnd(10,' ')+"|"
   });
   
   return returnString;
