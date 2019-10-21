@@ -13,4 +13,14 @@ describe('Bank Tests', function(){
     bankApp.deposit(50);
     expect(bankApp.balance()).toEqual(50);
   });
+
+  it("Makes mutiple deposits into bank account, summing to 80", function(){
+    bankApp.deposit(5);
+    bankApp.deposit(10);
+    bankApp.deposit(15);
+    bankApp.deposit(20);
+    bankApp.deposit(30);
+    bankApp.deposit(0);
+    expect(bankApp.balance()).toEqual(80);
+  });
 });
