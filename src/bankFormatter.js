@@ -32,7 +32,9 @@ BankFormatter.prototype.printFormatter = function(){
   returnString =  "Date      |Credit    |Debit     |Balance   |"
   returnString += "\n"
   returnString +=  "----------|----------|----------|----------|"
+  
   sortedTransactions = this.orderByDate(bankApp.getTransactions());
+  
   sortedTransactions.forEach(function(trans) {
     returnString += "\n";
     returnString += trans.getDate().padEnd(10,' ') + "|";
