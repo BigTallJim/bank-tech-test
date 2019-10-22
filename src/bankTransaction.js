@@ -1,8 +1,9 @@
-function BankTransaction(amount, date){
+function BankTransaction(amount, date=new Date().toLocaleDateString("en-GB")){
   this.amount=0;
   this.withdrawal = false;
   this.deposit = false;
   this.date = date;
+  this.balance = 0;
 
   if (amount >= 0){
     this.deposit = true;
@@ -27,4 +28,12 @@ BankTransaction.prototype.isDeposit = function(){
 
 BankTransaction.prototype.isWithdrawal = function(){
   return this.withdrawal;
+}
+
+BankTransaction.prototype.setBalance = function(balance){
+  this.balance = balance;
+}
+
+BankTransaction.prototype.getBalance = function(){
+  return this.balance;
 }

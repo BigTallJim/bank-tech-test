@@ -37,5 +37,9 @@ describe('Bank Printing Tests', function(){
     expect(bankFormatter.printFormatter()).toEqual("Date      |Credit    |Debit     |Balance   |\n----------|----------|----------|----------|\n01.01.2019|123       |          |123       |");
   });
 
+  it("Write out the whole thing to the console for user check", function(){
+    expect(bankApp.print()).toEqual(true);
+  });
+
 
 });

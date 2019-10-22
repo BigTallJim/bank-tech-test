@@ -2,6 +2,15 @@
 Makers tech test - Simple Banking application.  
 Written in Javascript
 
+# Notes
+* Date defaults to current date if not entered
+* Transactions do not need to be entered in date order, they will be sorted
+* You need to run the BankSpecRunner, then bring up the console and follow these instructions
+1) Create bankApp
+2) Deposit or Withdraw like this ***********
+3) Print Statement like this ************
+
+
 # Requirements
 * You should be able to interact with your code via a REPL like IRB or the JavaScript console.  (You don't need to implement a command line interface that takes input from STDIN.)
 * Deposits, withdrawal.

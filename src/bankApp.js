@@ -27,3 +27,9 @@ BankApp.prototype.sumTransactionArray = function(){
 BankApp.prototype.getTransactions = function(){
   return transactions;
 }
+
+BankApp.prototype.print = function(){
+  bankFormatter = new BankFormatter(this);
+  bankFormatter.print();
+  return true;
+}
